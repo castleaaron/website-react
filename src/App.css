@@ -1,19 +1,54 @@
 .App {
   text-align: center;
+  background: linear-gradient(to bottom, #2c3e50, #4b0082);
+  overflow: hidden;
+  position: relative;
 }
+
+.stars {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 0; /* Ensure stars are behind other elements */
+
+}
+
+.star {
+  width: 2px;
+  height: 2px;
+  background: white;
+  position: absolute;
+  animation: twinkling 2s infinite;
+  z-index: 0;
+}
+
+@keyframes twinkling {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
   border-radius: 50%;
+  border:#0005 5px solid;
+  margin-top: 5%;
+  z-index: 1; /* Ensure logo is above stars */
+
 
 }
 
 
 
 .App-header {
-  background: linear-gradient(124deg, yellow, red, orange, lightblue, purple, blue);
-  background-size: 1800% 1800%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -21,10 +56,9 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  -webkit-animation: rainbow 30s linear infinite;
--z-animation: rainbow 30s linear infinite;
--o-animation: rainbow 30s linear infinite;
-  animation: rainbow 30s linear infinite;
+  text-shadow: 2px 2px 4px #000000;
+  z-index: 1; /* Ensure header is above stars */
+
 }
 
 @-webkit-keyframes rainbow {
@@ -65,12 +99,19 @@
 
 nav {
   position: sticky;
-  top: 0;
-  margin-top: -106px;
-  background-color: transparent;
+  top: 0px;
+  margin-top: -126px;
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  margin-bottom: 20px;
+  -webkit-backdrop-filter: blur(10px);
   background-blend-mode: color;
   color: #fff;
   padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100; /* Ensure header is above stars */
+
   
 }
 
@@ -96,12 +137,6 @@ nav ul li.Icons:hover {
   animation-fill-mode: 0.5s infinite;
 }
 
-
-
-
-
-
-
   nav ul li.pages {
     display: inline;
     padding-top: 10px;
@@ -110,6 +145,8 @@ nav ul li.Icons:hover {
     font-family:'Verdana';
     text-align: center;
     margin: 0 auto;
+    text-shadow: #000 0px 0px 10px;
+
   }
 
 
@@ -141,14 +178,15 @@ nav ul li.pages a:hover {
 }
 
 .About-header{
-  background: linear-gradient(to right, #000000, #4b6cb7);
-  background-size: cover;
   height:100vh;
   color: white;
   overflow: hidden;
+  font-size: 0.5em;
+  margin-top: 100px;
+  height: auto;
 }
 
-.skill-icons{
+.skill-icons {
   font-size: 4.5em;
   border: 1.7px solid rgba(39, 155, 184, 0.637) !important;
   box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137) !important;
@@ -157,29 +195,30 @@ nav ul li.pages a:hover {
   border-radius: 10px;
   display: table;
   transition: all 0.4s ease 0s !important;
-  overflow:hidden;
-  
+  overflow: hidden;
+  position: relative; /* Add this to position the ::after pseudo-element correctly */
 }
 
-.tech-icons {
-  font-size: 4.5em !important;
-  margin: 15px !important;
-  padding: 10px !important;
-  opacity: 0.93 !important;
-  border: 1.7px solid rgba(39, 155, 184, 0.637) !important;
-  vertical-align: middle !important;
-  text-align: center !important;
-  border-radius: 5px !important;
-  display: table !important;
-  box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137) !important;
-  overflow: hidden !important;
-  transition: all 0.4s ease 0s !important;
+.skill-icons::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0px;
+  backdrop-filter: blur(10px); /* Apply blur to the background */
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+  max-width: 100%; /* Ensure the text does not exceed the container width */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow:initial; /* Add ellipsis for overflow text */
 }
 
-@media (max-width: 767px) {
-  .tech-icons {
-    margin: 10px !important;
-  }
+.skill-icons:hover::after {
+  opacity: 1;
 }
 
 .skill-icons:hover {
@@ -187,8 +226,19 @@ nav ul li.pages a:hover {
   overflow: hidden !important;
   border: 2.2px solid rgba(255, 255, 255, 0.883) !important;
   transform-origin: center;
-
+  /* Remove the blur filter */
 }
+
+@keyframes flip {
+  0% {
+    transform: perspective(400px) rotateY(0);
+  }
+  100% {
+    transform: perspective(400px) rotateY(180deg);
+  }
+}
+
+
 .tech-icon-images {
   padding: 20px !important;
   line-height: 1.6 !important;
@@ -218,15 +268,43 @@ nav ul li.pages a:hover {
   animation: slide-in 0.5s forwards;
 }
 
+.About-h1 {
+  margin-left: -55%;
+  margin-top: 100px;
+  font-size: 4.5em;
+}
+
+.About-h1-me {
+  margin-left: -50%;
+  margin-top: 0px;
+  font-size: 4.5em;
+  color: #61dafb;
+}
+
+.Description-about {
+  margin-left: 40%;
+  margin-top: -300px;
+  padding-bottom: 100px;
+  margin-right: 40%;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.person-working {
+  margin-right: -60%;
+  margin-top: -32%;
+  position: sticky;
+
+
+}
 
 
 .Quote-header {
   margin-top: -100px;
-  font-style: italic;
 }
 
 .Quote{
-  margin-top: 0px;
+  margin-top: -20px;
   font-style: oblique;
 }
 
@@ -235,6 +313,70 @@ html, body {
   padding: 0;
 }
 
+fade {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in-out;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.GithubCalendar {
+  
+  margin-left: 0%;
+  margin-bottom: auto;
+
+  display: flexbox;
+}
+
+.resume-png {
+  pointer-events: none;
+  border:#0005 5px solid;
+  margin-top: 120px;
+  z-index: 1; /* Ensure logo is above stars */
+  height: 800px;
+}
+
+
+/* Custom Purple Themed Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+  height: 12px; /* Height of the scrollbar (for horizontal scrollbar) */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #8e44ad; /* Dark purple color for the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+  border: 3px solid #f3e5f5; /* Light purple padding around the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #9b59b6; /* Lighter purple color for the scrollbar thumb on hover */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #4a235a; /* Dark purple color for the scrollbar track */
+  border-radius: 10px; /* Rounded corners for the scrollbar track */
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #4a235a; /* Dark purple color for the scrollbar corner */
+}
 
 
 

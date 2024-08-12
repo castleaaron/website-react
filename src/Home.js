@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Stars from './Stars';
 
 const Home = () => {
   const [quote, setQuote] = useState('');
@@ -13,21 +14,26 @@ const Home = () => {
       if (storedData && JSON.parse(storedData).date === today) {
         setQuote(JSON.parse(storedData).quote);
       } else {
-        const response = await axios.get('https://api.api-ninjas.com/v1/quotes?category=life', {
+        const response = await axios.get('https://api.api-ninjas.com/v1/quotes?category=happiness', {
           headers: {
             'X-Api-Key': 'nsfj+GViXFNzjihnnLXxPA==XhEydN2S8ZdohBmo'
           }
         });
-        setQuote(response.data[0].quote + ' - ' + response.data[0].author ? response.data[0].author : 'Unknown');
+        setQuote(response.data[0].quote + ' - ' + response.datas[0].author);
         localStorage.setItem('quoteData', JSON.stringify({ date: today, quote: response.data[0].quote }));
       }
     };
+    
+    
+    
 
     fetchData();
+
   }, []);
 
   return (
     <div className="App-header">
+      <Stars />
       <img src={require('./images/aaron_castle.jpeg')} className="App-logo" alt="logo" />
       <p className = "Intro">
       <p className = "letter">
