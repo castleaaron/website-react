@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/website-react/static/css/main.2ac126f3.css",
-    "main.js": "/website-react/static/js/main.74e1f1bd.js",
+    "main.js": "/website-react/static/js/main.dc2146ea.js",
     "static/js/453.02e786f6.chunk.js": "/website-react/static/js/453.02e786f6.chunk.js",
     "static/media/color-detection.webp": "/website-react/static/media/color-detection.8f20169988ac54d9c784.webp",
     "static/media/aaron_castle.jpeg": "/website-react/static/media/aaron_castle.3ae19a63ad414e6fa8bd.jpeg",
@@ -10,11 +10,11 @@
     "static/media/linkedin_logo.webp": "/website-react/static/media/linkedin_logo.43c568bc85cfbd64bc05.webp",
     "index.html": "/website-react/index.html",
     "main.2ac126f3.css.map": "/website-react/static/css/main.2ac126f3.css.map",
-    "main.74e1f1bd.js.map": "/website-react/static/js/main.74e1f1bd.js.map",
+    "main.dc2146ea.js.map": "/website-react/static/js/main.dc2146ea.js.map",
     "453.02e786f6.chunk.js.map": "/website-react/static/js/453.02e786f6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2ac126f3.css",
-    "static/js/main.74e1f1bd.js"
+    "static/js/main.dc2146ea.js"
   ]
 }
