@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/website-react/static/css/main.2ac126f3.css",
-    "main.js": "/website-react/static/js/main.dc2146ea.js",
+    "main.css": "/website-react/static/css/main.b2c8fc1c.css",
+    "main.js": "/website-react/static/js/main.92c10f3b.js",
     "static/js/453.02e786f6.chunk.js": "/website-react/static/js/453.02e786f6.chunk.js",
+    "static/media/bokeh-plot.png": "/website-react/static/media/bokeh-plot.5909e6688e057fd712bb.png",
     "static/media/color-detection.webp": "/website-react/static/media/color-detection.8f20169988ac54d9c784.webp",
     "static/media/aaron_castle.jpeg": "/website-react/static/media/aaron_castle.3ae19a63ad414e6fa8bd.jpeg",
     "static/media/fft.png": "/website-react/static/media/fft.98ab33a99379a55cfd8a.png",
     "static/media/email_logo.png": "/website-react/static/media/email_logo.647bb52528e6a0ce522c.png",
     "static/media/linkedin_logo.webp": "/website-react/static/media/linkedin_logo.43c568bc85cfbd64bc05.webp",
     "index.html": "/website-react/index.html",
-    "main.2ac126f3.css.map": "/website-react/static/css/main.2ac126f3.css.map",
-    "main.dc2146ea.js.map": "/website-react/static/js/main.dc2146ea.js.map",
+    "main.b2c8fc1c.css.map": "/website-react/static/css/main.b2c8fc1c.css.map",
+    "main.92c10f3b.js.map": "/website-react/static/js/main.92c10f3b.js.map",
     "453.02e786f6.chunk.js.map": "/website-react/static/js/453.02e786f6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2ac126f3.css",
-    "static/js/main.dc2146ea.js"
+    "static/css/main.b2c8fc1c.css",
+    "static/js/main.92c10f3b.js"
   ]
 }
