@@ -19,7 +19,7 @@ const Home = () => {
             'X-Api-Key': 'nsfj+GViXFNzjihnnLXxPA==XhEydN2S8ZdohBmo'
           }
         });
-        setQuote(response.data[0].quote + ' - ' + response.datas[0].author);
+        setQuote(response.data[0].quote + ' - ' + response.data[0].author);
         localStorage.setItem('quoteData', JSON.stringify({ date: today, quote: response.data[0].quote }));
       }
     };
@@ -34,6 +34,7 @@ const Home = () => {
   return (
     <div className="App-header">
       <Stars />
+
       <img src={require('./images/aaron_castle.jpeg')} className="App-logo" alt="logo" />
       <p className = "Intro">
       <p className = "letter">
@@ -41,9 +42,12 @@ const Home = () => {
       <span key={index} className="letter" style={{ animationDelay: `${index * 0.05}s` }}>
         {letter === ' ' ? '\u00A0' : letter}
       </span>
+      
     ))}
+    <span className="hand">👋</span>
     </p>
       </p>
+
       <p className = "Quote-header">Quote of the day:</p>
       <p className = "Quote">{quote}</p>
     </div>

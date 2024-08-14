@@ -25,6 +25,29 @@
   z-index: 0;
 }
 
+/* Shooting Stars */
+.shooting-star {
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(white, transparent);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: shooting 2s linear infinite;
+}
+
+@keyframes shooting {
+  0% {
+    transform: translate(0, 0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100vw, 100vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
 @keyframes twinkling {
   0%, 100% {
     opacity: 1;
@@ -99,6 +122,7 @@
 
 nav {
   position: sticky;
+  display: flex;
   top: 0px;
   margin-top: -126px;
   backdrop-filter: blur(10px); /* Frosted glass effect */
@@ -199,6 +223,8 @@ nav ul li.pages a:hover {
   position: relative; /* Add this to position the ::after pseudo-element correctly */
 }
 
+
+
 .skill-icons::after {
   content: attr(data-text);
   position: absolute;
@@ -263,36 +289,138 @@ nav ul li.pages a:hover {
   }
 }
 
-.letter {
+.hand{
   display: inline-block;
-  animation: slide-in 0.5s forwards;
+  animation: wave 2s infinite;
 }
 
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.letter {
+  display: inline-block;
+  animation: slide-in 1s ease-in-out forwards;
+}
+
+
 .About-h1 {
-  margin-left: -55%;
+  margin-left: -45%;
   margin-top: 100px;
   font-size: 4.5em;
 }
 
 .About-h1-me {
-  margin-left: -50%;
-  margin-top: 0px;
+  margin-left: -38%;
+  margin-top: -40px;
   font-size: 4.5em;
   color: #61dafb;
 }
 
 .Description-about {
-  margin-left: 40%;
-  margin-top: -300px;
+  position: relative;
+  margin-left: 29%;
+  margin-top: -12.5%;
+  padding: 20px;
   padding-bottom: 100px;
-  margin-right: 40%;
-  font-size: 1.5em;
-  text-align: center;
+  margin-right: 32%;
+  font-size: 2.0em;
+  text-align: justify; /* Center the text */
+  border: 2px solid white;
+  border-radius: 40px;
+  background-color: transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
+
+.thought {
+  display:flex;
+  background-color:#949494;
+  font-size: 1.5em;
+  padding:20px;
+  border-radius:30px;
+  min-width:40px;
+  max-width: 500px;
+  min-height:40px;
+  margin-top: -15%;
+  margin-left: 40%;
+  
+  color: rgb(255, 255, 255);
+  position:relative;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  margin-bottom: 50px;
+}
+.thought:before,
+.thought:after {
+  content:"";
+  background-color:#949494;
+  border-radius:50%;
+  display:block;
+  position:absolute;
+  z-index:1;
+}
+.thought:before {
+  width:44px;
+  height:44px;
+  top:-20px;
+  left:28px;
+  box-shadow:-50px 30px 0 -12px #949494;
+}
+.thought:after {
+  bottom:-10px;
+  right:26px;
+  width:30px;
+  height:30px;
+  box-shadow:40px -34px 0 0 #949494,
+             -28px -6px 0 -2px #949494,
+             -24px 17px 0 -6px #949494,
+             -5px 25px 0 -10px #949494;
+  
+}
+
+
+
+
 
 .person-working {
   margin-right: -60%;
-  margin-top: -32%;
+  margin-top: -33%;
   position: sticky;
 
 
@@ -338,7 +466,7 @@ fade {
 
 .GithubCalendar {
   
-  margin-left: 0%;
+  margin-left: 0 auto;
   margin-bottom: auto;
 
   display: flexbox;
@@ -350,6 +478,7 @@ fade {
   margin-top: 120px;
   z-index: 1; /* Ensure logo is above stars */
   height: 800px;
+  display: flex;
 }
 
 
@@ -376,6 +505,57 @@ fade {
 
 ::-webkit-scrollbar-corner {
   background-color: #4a235a; /* Dark purple color for the scrollbar corner */
+}
+
+
+.project-icons {
+  font-size: 4.5em;
+  border: 1.7px solid rgba(39, 155, 184, 0.637) !important;
+  box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137) !important;
+  margin: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  height: 400px;
+  display: table;
+  transition: all 0.4s ease 0s !important;
+  overflow: hidden;
+  position: relative; /* Add this to position the ::after pseudo-element correctly */
+}
+
+.project-container {
+  position: relative;
+  text-align: center;
+  height: 450px; /* Ensure the container has a fixed height */
+}
+
+.project-png {
+  width: 100%;
+  height: 70%;
+}
+
+.project-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Align items to the bottom */
+}
+
+.project-caption-title {
+  padding: 5px 0;
+}
+
+.project-caption-description {
+  padding: 5px 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-style: italic;
+  font-size: 10px;
 }
 
 

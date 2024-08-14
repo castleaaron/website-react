@@ -29,9 +29,7 @@ const About = () => {
     <Stars />
         <h1 className = "About-h1">About</h1>
         <h1 className = "About-h1-me">Me</h1>
-        <p className = "Description-about">Hi! I am Aaron Castle, a software engineer with a passion for learning and problem solving. I am a recent graduate from the University of California, Irvine with a Bachelor's degree in Computer Science. I have experience in full stack development, data structures and algorithms, and software engineering. I am currently seeking a full-time software engineering position to further develop my skills and contribute to a team.</p>
-        <img src={require('./images/person-working.png')} className="person-working" alt="logo" />
-        <h1>Professional Skillset</h1>
+        <p className = "thought">At Allianz Technology, our team is pioneering advanced web API solutions utilizing the latest in C# and .NET frameworks. We've automated integration tests with JS and Postman, enhancing the efficiency and reliability of our systems. My role as a Software Engineer Intern has been integral in these developments, leveraging my solid foundation in computer science from the University of Minnesota.</p>        <h1>Professional Skillset</h1>
         <Grid container spacing={2}>
             <Grid item xs={2}>
             </Grid>
