@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.6493a9f7.css",
-    "main.js": "/static/js/main.e9640b6e.js",
-    "static/js/453.02e786f6.chunk.js": "/static/js/453.02e786f6.chunk.js",
-    "static/media/resume.png": "/static/media/resume.9936647bb81ced976246.png",
-    "static/media/color-detection.webp": "/static/media/color-detection.8f20169988ac54d9c784.webp",
-    "static/media/aaron_castle.jpeg": "/static/media/aaron_castle.3ae19a63ad414e6fa8bd.jpeg",
-    "static/media/fft.png": "/static/media/fft.98ab33a99379a55cfd8a.png",
-    "static/media/email_logo.png": "/static/media/email_logo.647bb52528e6a0ce522c.png",
-    "static/media/linkedin_logo.webp": "/static/media/linkedin_logo.43c568bc85cfbd64bc05.webp",
-    "index.html": "/index.html",
-    "main.6493a9f7.css.map": "/static/css/main.6493a9f7.css.map",
-    "main.e9640b6e.js.map": "/static/js/main.e9640b6e.js.map",
-    "453.02e786f6.chunk.js.map": "/static/js/453.02e786f6.chunk.js.map"
+    "main.css": "/website-react/static/css/main.6493a9f7.css",
+    "main.js": "/website-react/static/js/main.209bdd01.js",
+    "static/js/453.02e786f6.chunk.js": "/website-react/static/js/453.02e786f6.chunk.js",
+    "static/media/resume.png": "/website-react/static/media/resume.9936647bb81ced976246.png",
+    "static/media/color-detection.webp": "/website-react/static/media/color-detection.8f20169988ac54d9c784.webp",
+    "static/media/aaron_castle.jpeg": "/website-react/static/media/aaron_castle.3ae19a63ad414e6fa8bd.jpeg",
+    "static/media/fft.png": "/website-react/static/media/fft.98ab33a99379a55cfd8a.png",
+    "static/media/email_logo.png": "/website-react/static/media/email_logo.647bb52528e6a0ce522c.png",
+    "static/media/linkedin_logo.webp": "/website-react/static/media/linkedin_logo.43c568bc85cfbd64bc05.webp",
+    "index.html": "/website-react/index.html",
+    "main.6493a9f7.css.map": "/website-react/static/css/main.6493a9f7.css.map",
+    "main.209bdd01.js.map": "/website-react/static/js/main.209bdd01.js.map",
+    "453.02e786f6.chunk.js.map": "/website-react/static/js/453.02e786f6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6493a9f7.css",
-    "static/js/main.e9640b6e.js"
+    "static/js/main.209bdd01.js"
   ]
 }
