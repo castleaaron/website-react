@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/website-react/static/css/main.fc2d84a1.css",
+    "main.css": "/website-react/static/css/main.559b1739.css",
     "main.js": "/website-react/static/js/main.c63bcd6f.js",
     "static/js/453.02e786f6.chunk.js": "/website-react/static/js/453.02e786f6.chunk.js",
     "static/media/bokeh-plot.png": "/website-react/static/media/bokeh-plot.5909e6688e057fd712bb.png",
@@ -10,12 +10,12 @@
     "static/media/email_logo.png": "/website-react/static/media/email_logo.647bb52528e6a0ce522c.png",
     "static/media/linkedin_logo.webp": "/website-react/static/media/linkedin_logo.43c568bc85cfbd64bc05.webp",
     "index.html": "/website-react/index.html",
-    "main.fc2d84a1.css.map": "/website-react/static/css/main.fc2d84a1.css.map",
+    "main.559b1739.css.map": "/website-react/static/css/main.559b1739.css.map",
     "main.c63bcd6f.js.map": "/website-react/static/js/main.c63bcd6f.js.map",
     "453.02e786f6.chunk.js.map": "/website-react/static/js/453.02e786f6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fc2d84a1.css",
+    "static/css/main.559b1739.css",
     "static/js/main.c63bcd6f.js"
   ]
 }
