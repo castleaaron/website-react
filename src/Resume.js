@@ -9,7 +9,9 @@ const Resume = () => {
   return (
     <div className="App-header">
       <Stars />
-      <img src={require('./images/resume.png')} className="resume-png" alt="logo" />
+      <iframe className="iframe-container"
+        src="https://docs.google.com/document/d/1ByHxAIMSPPekgAPhDqn5LCNXV3aFm0Ai/preview" 
+      ></iframe>
     </div>
   );
 };

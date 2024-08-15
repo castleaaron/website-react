@@ -44,18 +44,17 @@ const Projects = () => {
         <Grid item xs={12}></Grid>
         <Grid item xs={12}></Grid>
         <Grid item xs={12}></Grid>
-        <Grid item xs={1}></Grid>
+        <Grid item xs={12}></Grid>
+
+        
+        <Grid item xs={4}></Grid>
         <Grid item xs={4} className="project-icons">
           <div className="project-container">
-            <img src={require('./images/email_logo.png')} className="project-png" alt="logo" />
-            <div className="project-caption">Email Project</div>
+            <a href="https://castleaaron.github.io/index.html" target="_blank" rel="noopener noreferrer"> <img src={require('./images/bokeh-plot.png')} className="project-png" alt="logo" /></a>
+            <div className="project-caption">
+            <div className="project-caption-title">Gene network analysis of age associated diseases</div>
+            <div className="project-caption-description">This project leverages Python and Bokeh to create an interactive tool for analyzing gene expression data related to aging and disease. Users can input their own gene-set expression data into the system. The core of the project involves constructing gene networks to identify interactions and relationships between genes, particularly those associated with senescent cells. A neural network is then employed to classify and predict diseases based on these interactions. The Bokeh library is used to provide dynamic visualizations, allowing users to explore gene networks and view disease predictions in an intuitive, interactive format.</div>
           </div>
-        </Grid>
-        <Grid item xs={2}></Grid>
-        <Grid item xs={4} className="project-icons">
-          <div className="project-container">
-            <DiJavascript1 />
-            <div className="project-caption">JavaScript Project</div>
           </div>
         </Grid>
         <Grid item xs={12}></Grid>

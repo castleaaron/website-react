@@ -30,10 +30,11 @@ function App() {
 
 function AppWrapper() {
   return (
+    
     <Router>
-      <App />
+      <App id="root"/>
     </Router>
   );
 }
 
-export default AppWrapper;
+export default App;

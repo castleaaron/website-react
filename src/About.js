@@ -29,7 +29,7 @@ const About = () => {
     <Stars />
         <h1 className = "About-h1">About</h1>
         <h1 className = "About-h1-me">Me</h1>
-        <p className = "thought">At Allianz Technology, our team is pioneering advanced web API solutions utilizing the latest in C# and .NET frameworks. We've automated integration tests with JS and Postman, enhancing the efficiency and reliability of our systems. My role as a Software Engineer Intern has been integral in these developments, leveraging my solid foundation in computer science from the University of Minnesota.</p>        <h1>Professional Skillset</h1>
+        <p className = "thought">I'm a Computer Science major at the University of Minnesota with a GPA of 3.88, specializing in software engineering and data analysis. My internships at Allianz Technology and Sentera have equipped me with practical experience in developing web APIs, creating automated tests, and tackling innovative projects like drone vibration analysis and color filter testing. Proficient in languages such as C#, Python, and C++, and experienced with tools like OpenCV and Docker, I thrive in both collaborative and independent environments. Outside of academics, I’m actively involved in campus life through various clubs and leadership roles. I’m eager to leverage my technical skills and experiences to contribute to impactful technology projects and further my professional growth.</p>        <h1>Professional Skillset</h1>
         <Grid container spacing={2}>
             <Grid item xs={2}>
             </Grid>

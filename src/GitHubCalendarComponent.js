@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import GitHubCalendar from 'github-calendar';
 import 'github-calendar/dist/github-calendar-responsive.css'; // Import the CSS for responsive design
+import './GitHubCalendarComponent.css'; // Import custom CSS
 
 const GitHubCalendarComponent = ({ username }) => {
   const calendarRef = useRef(null);

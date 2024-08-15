@@ -1,0 +1,4 @@
+.contrib-column.contrib-column-first.table-column,
+.contrib-column.table-column {
+  display: none;
+}

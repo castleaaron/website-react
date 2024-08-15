@@ -12,17 +12,17 @@ const Home = () => {
       const today = new Date().toISOString().split('T')[0];
       const storedData = localStorage.getItem('quoteData');
       if (storedData && JSON.parse(storedData).date === today) {
-        setQuote(JSON.parse(storedData).quote);
+        setQuote(JSON.parse(storedData).quote + ' - ' + JSON.parse(storedData).author);
       } else {
-        const response = await axios.get('https://api.api-ninjas.com/v1/quotes?category=happiness', {
+        let response = await axios.get('https://api.api-ninjas.com/v1/quotes?category=happiness', {
           headers: {
             'X-Api-Key': 'nsfj+GViXFNzjihnnLXxPA==XhEydN2S8ZdohBmo'
           }
         });
         setQuote(response.data[0].quote + ' - ' + response.data[0].author);
-        localStorage.setItem('quoteData', JSON.stringify({ date: today, quote: response.data[0].quote }));
+        localStorage.setItem('quoteData', JSON.stringify({ date: today, quote: response.data[0].quote, author: response.data[0].author }));
       }
-    };
+    }
     
     
     
