@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/website-react/static/css/main.b02b98f9.css",
-    "main.js": "/website-react/static/js/main.ec18dee8.js",
+    "main.css": "/website-react/static/css/main.9bccd21f.css",
+    "main.js": "/website-react/static/js/main.f158f053.js",
     "static/js/453.02e786f6.chunk.js": "/website-react/static/js/453.02e786f6.chunk.js",
     "static/media/bokeh-plot.png": "/website-react/static/media/bokeh-plot.5909e6688e057fd712bb.png",
     "static/media/color-detection.webp": "/website-react/static/media/color-detection.8f20169988ac54d9c784.webp",
@@ -10,12 +10,12 @@
     "static/media/email_logo.png": "/website-react/static/media/email_logo.647bb52528e6a0ce522c.png",
     "static/media/linkedin_logo.webp": "/website-react/static/media/linkedin_logo.43c568bc85cfbd64bc05.webp",
     "index.html": "/website-react/index.html",
-    "main.b02b98f9.css.map": "/website-react/static/css/main.b02b98f9.css.map",
-    "main.ec18dee8.js.map": "/website-react/static/js/main.ec18dee8.js.map",
+    "main.9bccd21f.css.map": "/website-react/static/css/main.9bccd21f.css.map",
+    "main.f158f053.js.map": "/website-react/static/js/main.f158f053.js.map",
     "453.02e786f6.chunk.js.map": "/website-react/static/js/453.02e786f6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b02b98f9.css",
-    "static/js/main.ec18dee8.js"
+    "static/css/main.9bccd21f.css",
+    "static/js/main.f158f053.js"
   ]
 }
