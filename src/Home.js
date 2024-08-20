@@ -17,7 +17,6 @@ const Home = () => {
 
   useEffect(() => {
     const fetchData = () => {
-      localStorage.clear();
       const today = new Date().toISOString().split('T')[0];
       const storedQuoteData = localStorage.getItem('quoteData');
       if (storedQuoteData) {
@@ -106,8 +105,8 @@ const Home = () => {
     </p>
       </p>
 
-      <p className = "Quote-header">Quote of the day:</p>
-      <p className = "Quote">{quote}</p>
+      {/* <p className = "Quote-header">Quote of the day:</p>
+      <p className = "Quote">{quote}</p> */}
       <div className="Contact">
         <h2 className = "Contact-Header">Contact Me</h2>
         <form className = "Contact-Form" onSubmit={handleSubmit}>
