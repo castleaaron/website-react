@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import './App.css';
+import './Mobile.css';
 import About from './About';
 import Resume from './Resume';
 import Projects from './Projects';

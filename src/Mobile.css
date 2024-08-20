@@ -1,0 +1,244 @@
+@media screen and (max-width: 800px) {
+    .App-logo {
+        height: 40vmin; /* Adjust height for mobile */
+        margin-top: 15vh; /* Adjust margin for mobile */
+        margin-bottom: -5vh; /* Adjust margin for mobile */
+      }
+
+    .iframe-container {
+      width: 100%;
+      height: 550px; /* Adjust height as needed */
+      border: none;
+      overflow: auto; /* Ensure the iframe itself can scroll */
+      margin-top: -50px;
+    }
+    .Contact {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 350px;
+        max-height: 300px;
+        margin: 20px auto;
+        margin-right: auto;
+        margin-top: 5vh;
+        
+    }
+    
+    .Contact-Header {
+        font-family: 'Raleway', sans-serif;
+        font-size: 24px;
+        color: #333;
+        text-align: center;
+        margin-bottom: 10px;
+        margin-top: -10px;
+    }
+    
+    .Contact-Form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .Contact-Form input,
+    .Contact-Form textarea {
+        font-family: 'Raleway', sans-serif;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .Contact-Form input:focus,
+    .Contact-Form textarea:focus {
+        border-color: #61dafb;
+        outline: none;
+        box-shadow: 0 0 5px rgba(97, 218, 251, 0.5);
+    }
+    
+    .Contact-Form button {
+        background-color: #61dafb;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .Contact-Form button:hover {
+        background-color: #21a1f1;
+    }
+
+    nav ul li.pages {
+        padding-top: 0px;
+        font-size: 1.0em;
+        padding: 10px;
+        margin-left: -10px;
+        font-family: 'Raleway', sans-serif;
+        text-align: center;
+        text-shadow: #000 0px 0px 10px;
+      }
+    
+      nav ul li.Icons {
+        position: relative;
+        margin-left: 5px;
+        padding-left: 5px;
+        margin-top: 8px;
+        transition: transform 0.5s ease;
+      }
+
+      .About-h1 {
+        margin-left: 27%;
+        margin-top: 50px;
+        font-size: 3.5em;
+        display: flex;
+      }
+      
+      .About-h1-me {
+        margin-left: 33%;
+        margin-top: -40px;
+        font-size: 3.5em;
+        color: #61dafb;
+        display: flex;
+      }
+
+      .Description-about {
+        position: relative;
+        margin-left: 29%;
+        margin-top: -12.5%;
+        padding: 20px;
+        padding-bottom: 100px;
+        margin-right: 32%;
+        font-size: 2.0em;
+        text-align: justify; /* Center the text */
+        border: 2px solid white;
+        border-radius: 40px;
+        background-color: transparent;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+      
+      .thought {
+        display: flex;
+        background-color: #949494;
+        font-size: 1em;
+        padding: 20px;
+        border-radius: 30px;
+        min-width: 40px;
+        max-width: 200px;
+        min-height: 40px;
+        margin: 20px auto; /* Center horizontally and add vertical margin */
+        color: rgb(255, 255, 255);
+        position: relative;
+        align-items: center;
+        margin-right: 220px;
+        margin-top: -100px;
+      }
+      .thought:before,
+      .thought:after {
+        content:"";
+        background-color:#949494;
+        border-radius:50%;
+        display:block;
+        position:absolute;
+        z-index:1;
+      }
+      .thought:before {
+        width:44px;
+        height:44px;
+        top:-20px;
+        left:28px;
+        box-shadow:-50px 30px 0 -12px #949494;
+      }
+      .thought:after {
+        bottom:-10px;
+        right:26px;
+        width:30px;
+        height:30px;
+        box-shadow:40px -34px 0 0 #949494,
+                   -28px -6px 0 -2px #949494,
+                   -24px 17px 0 -6px #949494,
+                   -5px 25px 0 -10px #949494;
+        
+      }
+
+      .Grids {
+        padding-left: 120px;
+        padding-right: 120px;
+        font-size: 0.5em;
+
+      }
+
+      .Professional {
+        font-size: 3.0em;
+        margin-top: 30px;
+      }
+
+      .GithubCalendar {
+  
+        margin-left: 0 auto;
+        margin-bottom: auto;
+      
+        display: flex;
+        z-index: 100;
+        scale: 0.45;
+      }
+
+      .project-icons {
+        font-size: 4.5em;
+        border: 1.7px solid rgba(39, 155, 184, 0.637) !important;
+        box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137) !important;
+        margin: 15px;
+        padding: 10px;
+        border-radius: 10px;
+        height: 550px;
+        display: table;
+        transition: all 0.4s ease 0s !important;
+        overflow: hidden;
+        position: relative; /* Add this to position the ::after pseudo-element correctly */
+      }
+      
+      .project-container {
+        position: relative;
+        text-align: center;
+        height: 150px; /* Ensure the container has a fixed height */
+        width: auto;
+      }
+      
+      .project-png {
+        width: 100%;
+        height: 70%;
+      }
+      
+      .project-caption {
+        position: absolute;
+        bottom:auto;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        font-size: 10px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; /* Align items to the bottom */
+      }
+      
+      .project-caption-title {
+        padding: 5px 0;
+      }
+      
+      .project-caption-description {
+        padding: 5px 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        font-style: italic;
+        font-size: 10px;
+      }
+
+}
+    
+  

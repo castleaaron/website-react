@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import emailjs from 'emailjs-com';
 import Stars from './Stars';
+import quotes from './quotes/quotes.json';
 
 const Home = () => {
   const [quote, setQuote] = useState('');
@@ -15,27 +16,51 @@ const Home = () => {
   });
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = () => {
       const today = new Date().toISOString().split('T')[0];
-      const storedData = localStorage.getItem('quoteData');
-      if (storedData && JSON.parse(storedData).date === today) {
-        setQuote(JSON.parse(storedData).quote + ' - ' + JSON.parse(storedData).author);
-      } else {
-        let response = await axios.get('https://api.api-ninjas.com/v1/quotes?category=happiness', {
-          headers: {
-            'X-Api-Key': 'nsfj+GViXFNzjihnnLXxPA==XhEydN2S8ZdohBmo'
-          }
-        });
-        setQuote(response.data[0].quote + ' - ' + response.data[0].author);
-        localStorage.setItem('quoteData', JSON.stringify({ date: today, quote: response.data[0].quote, author: response.data[0].author }));
+      const storedQuoteData = localStorage.getItem('quoteData');
+      if (storedQuoteData) {
+        const { date, quote, author } = JSON.parse(storedQuoteData);
+        if (date === today) {
+          setQuote(`${quote} - ${author}`);
+          return;
+        }
       }
-    }
-    
-    
-    
 
+      let quoteIndex = localStorage.getItem('quoteIndex');
+      if (quoteIndex === null) {
+        quoteIndex = 0;
+      }
+      else {
+        quoteIndex = parseInt(quoteIndex);
+        quoteIndex++;
+      }
+
+      if(quoteIndex >= quotes.length) {
+        quoteIndex = 0;
+      }
+  
+      const randomQuote = quotes[quoteIndex];
+      setQuote(`${randomQuote.quote} - ${randomQuote.author}`);
+      localStorage.setItem('quoteData', JSON.stringify({ date: today, quote: randomQuote.quote, author: randomQuote.author }));
+    };
+  
+    const setNextUpdate = () => {
+      const now = new Date();
+      const nextUpdate = new Date();
+      nextUpdate.setUTCHours(12, 0, 0, 0);
+      if (now >= nextUpdate) {
+        nextUpdate.setUTCDate(nextUpdate.getUTCDate() + 1);
+      }
+      const timeUntilNextUpdate = nextUpdate - now;
+      setTimeout(() => {
+        fetchData();
+        setNextUpdate();
+      }, timeUntilNextUpdate);
+    };
+  
     fetchData();
-
+    setNextUpdate();
   }, []);
 
   const handleChange = (e) => {
@@ -87,10 +112,12 @@ const Home = () => {
         <form className = "Contact-Form" onSubmit={handleSubmit}>
           <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} required />
           <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required />
-          <textarea name="message" placeholder="Your Message" value={formData.message} onChange={handleChange} required />
+          <textarea name="message" placeholder="Your Message" value={formData.message} onChange={handleChange} style={{height: '100px', resize:'none'}}required />
           <button type="submit">Send</button>
         </form>
         </div>
+
+        
     </div>
   );
 };
