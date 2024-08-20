@@ -17,6 +17,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchData = () => {
+      localStorage.clear();
       const today = new Date().toISOString().split('T')[0];
       const storedQuoteData = localStorage.getItem('quoteData');
       if (storedQuoteData) {
