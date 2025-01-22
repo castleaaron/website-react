@@ -1,5 +1,5 @@
 import React from 'react';
-import Stars from './Stars';
+import Stars from '../../assets/Stars';
 import { Document, Page, pdfjs } from 'react-pdf';
 
 // Correctly set the workerSrc property

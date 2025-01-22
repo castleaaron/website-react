@@ -3,8 +3,8 @@ import {Col, Row} from 'react-bootstrap';
 import { CgCPlusPlus } from "react-icons/cg";
 import { Grid } from '@material-ui/core';
 import { AiOutlineDotNet } from "react-icons/ai";
-import GitHubCalendarComponent from './GitHubCalendarComponent';
-import Stars from './Stars';
+import GitHubCalendarComponent from '../../assets/GitHubCalendarComponent';
+import Stars from '../../assets/Stars';
 
 
 import {
