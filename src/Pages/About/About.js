@@ -4,7 +4,6 @@ import { CgCPlusPlus } from "react-icons/cg";
 import { Grid } from '@material-ui/core';
 import { AiOutlineDotNet } from "react-icons/ai";
 import GitHubCalendarComponent from '../../assets/GitHubCalendarComponent';
-import Stars from '../../assets/Stars';
 
 
 import {
@@ -26,7 +25,6 @@ const About = () => {
   return (
     <div className = "App-header">
     <div className = "About-header">
-    <Stars />
         <h1 className = "About-h1">About</h1>
         <h1 className = "About-h1-me">Me</h1>
         <p className = "thought">I'm a Computer Science major at the University of Minnesota with a GPA of 3.88, specializing in software engineering and data analysis. My internships at Allianz Technology and Sentera have equipped me with practical experience in developing web APIs, creating automated tests, and tackling innovative projects like drone vibration analysis and color filter testing. Proficient in languages such as C#, Python, and C++, and experienced with tools like OpenCV and Docker, I thrive in both collaborative and independent environments. Outside of academics, I’m actively involved in campus life through various clubs and leadership roles. I’m eager to leverage my technical skills and experiences to contribute to impactful technology projects and further my professional growth.</p>        

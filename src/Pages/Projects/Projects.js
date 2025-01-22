@@ -1,5 +1,4 @@
 import React from 'react';
-import Stars from '../../assets/Stars';
 import { DiJavascript1 } from 'react-icons/di';
 import { Grid } from '@material-ui/core';
 import '../../App.css'; // Import the CSS file
@@ -7,7 +6,6 @@ import '../../App.css'; // Import the CSS file
 const Projects = () => {
   return (
     <div className="App-header">
-      <Stars />
       <Grid container spacing={2}>
       <Grid item xs={12}></Grid>
       <Grid item xs={12}></Grid>
