@@ -9,7 +9,7 @@ const Stars = () => {
     for (let i = 0; i < starCount; i++) {
       const star = document.createElement('div');
       star.className = 'star';
-      star.style.top = `${Math.random() * 500}vh`;
+      star.style.top = `${Math.random() * 200}vh`;
       star.style.left = `${Math.random() * 100}vw`;
       star.style.animationDelay = `${Math.random() * 2}s`; // Random delay between 0 and 2 seconds
       starContainer.appendChild(star);

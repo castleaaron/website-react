@@ -1,0 +1,127 @@
+
+
+.App-logo {
+    width: 20em; /* Adjust height for mobile */
+    border-radius: 50%;
+    border:#0005 5px solid;
+    z-index: 1000; /* Ensure logo is above stars */
+  }
+
+.App-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    z-index: 1; /* Ensure header is above stars */
+    overflow: hidden;
+}
+
+.Intro {
+    font-size: 3.0em;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.Quote-header {
+    font-size: 1.5em;
+    margin-top: -2%;
+}
+
+.Quote {
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+
+
+.hand{
+    display: inline-block;
+    animation: wave 2s infinite;
+  }
+  
+  @keyframes wave {
+    0% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(14deg);
+    }
+    20% {
+      transform: rotate(-8deg);
+    }
+    30% {
+      transform: rotate(14deg);
+    }
+    40% {
+      transform: rotate(-4deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    60% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+
+    
+  .Contact {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 15vw;
+    margin: 20px auto;
+    margin-left: 75vw;
+    margin-top: -70vh;
+  }
+  
+  .Contact-Header {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2vmax;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .Contact-Form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .Contact-Form input,
+  .Contact-Form textarea {
+    font-family: 'Raleway', sans-serif;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1vmax;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .Contact-Form input:focus,
+  .Contact-Form textarea:focus {
+    border-color: #61dafb;
+    outline: none;
+    box-shadow: 0 0 5px rgba(97, 218, 251, 0.5);
+  }
+  
+  .Contact-Form button {
+    background-color: #61dafb;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1vmax;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .Contact-Form button:hover {
+    background-color: #21a1f1;
+  }
