@@ -8,7 +8,8 @@ body {
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
-    max-width: 70vw;
+    font-size: 1.0vmax;
+    width: 70%;
     margin: 0 auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     color: #333;
@@ -16,11 +17,13 @@ body {
 
 .skill-icons {
     display: flex;
-    flex-wrap: wrap; /* Enable wrapping */
+    flex-wrap: wrap;
     justify-content: center; /* Center the icons horizontally */
     gap: 20px; /* Space between icons */
     margin: 20px auto;
     padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
     font-size: 5vmax;
     max-width: 100%; /* Ensure the container can scale properly */
     box-sizing: border-box; /* Include padding in the width calculation */
@@ -28,13 +31,18 @@ body {
 
 .skill-icons > * {
     transition: transform 0.3s ease-in-out, border 0.3s ease-in-out;
-    padding: 15px; /* Space around the icons for a larger border area */
+    flex: 1 1 20%; /* Flex items grow and shrink equally */
+    padding: 20px; /* Space around the icons for a larger border area */
+    padding-left: 30px;
+    padding-right: 30px;
     border: 2px solid #61dafb;
     border-radius: 10%;
+    margin: 0 auto;
     display: inline-block; /* Ensure proper sizing of flex items */
 }
 
 .skill-icons > *:hover {
+    content: attr(data-text);
     transform: scale(1.2);
     backdrop-filter: blur(5px);
     color: #61dafb;
