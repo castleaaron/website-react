@@ -44,7 +44,7 @@ const Home = () => {
   // };
 
     useEffect(() => {
-      fetch('http://3.145.16.191:5000/api/quote')
+      fetch('https://castleaaronapi.zapto.org/api/quote')
         .then((response) => response.json())
         .then((data) => {
           setQuote(data.quote);
