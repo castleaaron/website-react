@@ -22,6 +22,8 @@
 
 /src/.env
 
+/src/env
+
 .env
 
 npm-debug.log*
