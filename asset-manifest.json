@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/static/css/main.ab6b2948.css",
-    "main.js": "/static/js/main.b5a237ef.js",
+    "main.js": "/static/js/main.06a63e93.js",
     "static/media/website.png": "/static/media/website.ad7bdb68091bd7fa3425.png",
     "static/media/bokeh-plot.png": "/static/media/bokeh-plot.5909e6688e057fd712bb.png",
-    "static/media/resume.png": "/static/media/resume.bfa655caeadfe5c9672c.png",
+    "static/media/resume.png": "/static/media/resume.c6b01794443731adf421.png",
     "static/media/color-detection.webp": "/static/media/color-detection.8f20169988ac54d9c784.webp",
     "static/media/aaron_castle.jpeg": "/static/media/aaron_castle.3ae19a63ad414e6fa8bd.jpeg",
     "static/media/fft.png": "/static/media/fft.98ab33a99379a55cfd8a.png",
@@ -12,10 +12,10 @@
     "static/media/linkedin_logo.webp": "/static/media/linkedin_logo.43c568bc85cfbd64bc05.webp",
     "index.html": "/index.html",
     "main.ab6b2948.css.map": "/static/css/main.ab6b2948.css.map",
-    "main.b5a237ef.js.map": "/static/js/main.b5a237ef.js.map"
+    "main.06a63e93.js.map": "/static/js/main.06a63e93.js.map"
   },
   "entrypoints": [
     "static/css/main.ab6b2948.css",
-    "static/js/main.b5a237ef.js"
+    "static/js/main.06a63e93.js"
   ]
 }
