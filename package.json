@@ -1,7 +1,7 @@
 {
   "name": "website-react",
   "version": "0.1.0",
-  "homepage": "https://castleaaron.github.io/website-react",
+  "homepage": "https://castleaaron.com",
   "private": false,
   "dependencies": {
     "@emotion/react": "^11.14.0",
