@@ -1,64 +1,41 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cron = require('node-cron');
-const cors = require('cors');
+import mongoose from 'mongoose';
 
-const app = express();
-const port = process.env.PORT || 5000;
-const MONGODB = process.env.MONGODB
+let cached = global.mongoose;
 
-// Middleware
-app.use(cors());
-app.use(express.json());
+if (!cached) {
+  cached = global.mongoose = { conn: null, promise: null };
+}
 
-// MongoDB connection
-mongoose.connect(MONGODB, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
-    console.log('Connected to MongoDB');
-  })
-  .catch((error) => {
-    console.error('Error connecting to MongoDB:', error);
-  });
+async function connectToDatabase() {
+  if (cached.conn) return cached.conn;
 
-const quoteSchema = new mongoose.Schema({
-  quote: String,
-  author: String,
-});
+  if (!cached.promise) {
+    cached.promise = mongoose.connect(process.env.MONGODB, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }).then(mongoose => mongoose);
+  }
 
-const Quote = mongoose.model('Quote', quoteSchema);
+  cached.conn = await cached.promise;
+  return cached.conn;
+}
 
-let dailyQuote = null;
+export default async function handler(req, res) {
+  await connectToDatabase();
 
-// Function to fetch a random quote
-const fetchRandomQuote = async () => {
+  const Quote = mongoose.models.Quote || mongoose.model('Quote', new mongoose.Schema({
+    quote: String,
+    author: String,
+  }));
+
   try {
-    const count = await Quote.countDocuments();
-    const randomIndex = Math.floor(Math.random() * count);
-    const randomQuote = await Quote.findOne().skip(randomIndex);
-    dailyQuote = randomQuote;
-    console.log('Fetched new daily quote:', dailyQuote);
+    const quote = await Quote.findOne().sort({ _id: -1 }).exec();
+    if (!quote) {
+      return res.status(404).json({ message: 'No quotes found' });
+    }
+    res.status(200).json(quote);
   } catch (error) {
-    console.error('Error fetching random quote:', error);
+    console.error('Error getting quote:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
-};
-
-// Schedule the task to run at 0 GMT every day
-cron.schedule('0 0 * * *', () => {
-  fetchRandomQuote();
-});
-
-// Initial fetch
-fetchRandomQuote();
-
-// API endpoint to get the daily quote
-app.get('/api/quote', (req, res) => {
-  if (dailyQuote) {
-    res.json(dailyQuote);
-  } else {
-    res.status(404).json({ message: 'No quote available' });
-  }
-});
-
-app.listen(port, () => {
-  console.log(`Server is running on port: ${port}`);
-});
+}

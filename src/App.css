@@ -1,43 +1,220 @@
-.App {
-  text-align: center;
-  background: linear-gradient(to bottom, #2c3e50, #4b0082); /* Gradient background */
-  position: relative;
-  min-height: 100vh; /* Ensure it covers full viewport height */
-  width: 100vw; /* Ensure full viewport width */
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+/* Base styles and variables */
+:root {
+  --primary: #8338ec;
+  --primary-dark: #6a2ec4;
+  --secondary: #c77dff;
+  --accent: #ff006e;
+  --background: #1e0938;
+  --background-light: #2d1155;
+  --text: #f8f9fa;
+  --text-secondary: #d8c1f7;
+  --success: #06d6a0;
+  --card-bg: rgba(45, 17, 85, 0.7);
+  --transition: all 0.3s ease;
+  --shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.7);
+  --border-radius: 8px;
+  --navbar-height: 70px; /* Added for consistent spacing */
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: "Inter", "Roboto", -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-top: var(--navbar-height); /* Add padding to prevent content overlap with navbar */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+button,
+.button {
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+button:hover,
+.button:hover {
+  background-color: rgba(131, 56, 236, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Page transitions */
+.fade-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Stars background */
 .stars {
+  position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 200vh;
+  z-index: -1;
   overflow: hidden;
-  z-index: 0; /* Ensure stars are behind other elements */
-
 }
 
 .star {
+  position: absolute;
   width: 2px;
   height: 2px;
-  background: white;
-  position: absolute;
-  animation: twinkling 2s infinite;
-  z-index: 0;
+  background-color: #d8c1f7;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: twinkle 4s infinite;
 }
 
-
-
-
-
-@keyframes twinkling {
-  0%, 100% {
-    opacity: 1;
+@keyframes twinkle {
+  0% {
+    opacity: 0.2;
   }
   50% {
-    opacity: 0;
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.2;
   }
 }
 
+/* Container styles */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
 
+.section {
+  padding: 5rem 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 70%;
+  height: 4px;
+  background-color: var(--primary);
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  :root {
+    --navbar-height: 60px;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* Prevent scrolling when mobile menu is open */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent scrolling when mobile menu is open */
+body.menu-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+/* Ensure menu overlay covers the entire screen */
+.navbar-content.show::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}

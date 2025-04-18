@@ -1,55 +1,211 @@
-body {
-    overflow-y: auto;
-}
-
-.about-me {
-    font-family: Arial, sans-serif;
-    text-shadow: none;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    font-size: 1.0vmax;
-    width: 70%;
-    margin: 0 auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    color: #333;
-}
-
-.skill-icons {
+.App-header {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center the icons horizontally */
-    gap: 20px; /* Space between icons */
-    margin: 20px auto;
-    padding-bottom: 20px;
-    padding-right: 20px;
-    padding-left: 20px;
-    font-size: 5vmax;
-    max-width: 100%; /* Ensure the container can scale properly */
-    box-sizing: border-box; /* Include padding in the width calculation */
-}
-
-.skill-icons > * {
-    transition: transform 0.3s ease-in-out, border 0.3s ease-in-out;
-    flex: 1 1 20%; /* Flex items grow and shrink equally */
-    padding: 20px; /* Space around the icons for a larger border area */
-    padding-left: 30px;
-    padding-right: 30px;
-    border: 2px solid #61dafb;
-    border-radius: 10%;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: calc(100vh - 80px);
+  }
+  
+  .About-header {
+    max-width: 900px;
+    width: 100%;
     margin: 0 auto;
-    display: inline-block; /* Ensure proper sizing of flex items */
-}
-
-.skill-icons > *:hover {
+    padding: 4rem 1.5rem;
+  }
+  
+  .About,
+  .Professional {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    color: var(--text);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+  }
+  
+  .About::after,
+  .Professional::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    border-radius: 4px;
+  }
+  
+  .Professional {
+    margin-top: 3.5rem;
+  }
+  
+  .about-me {
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary);
+    transition: var(--transition);
+  }
+  
+  .about-me:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -20px rgba(2, 12, 27, 0.7);
+  }
+  
+  .about-me h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .about-me p {
+    margin-bottom: 1.2rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1.05rem;
+  }
+  
+  .about-me p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .about-me strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+  
+  .skill-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 2.5rem;
+    justify-content: center;
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+  }
+  
+  .skill-icons svg {
+    width: 60px;
+    height: 60px;
+    color: var(--text-secondary);
+    transition: var(--transition);
+    position: relative;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .skill-icons svg:hover {
+    color: var(--primary);
+    transform: translateY(-8px);
+  }
+  
+  .skill-icons svg::after {
     content: attr(data-text);
-    transform: scale(1.2);
-    backdrop-filter: blur(5px);
-    color: #61dafb;
-    background-image: linear-gradient(#61dafb, #61dafb);
-    background-position: 0 100%;
-    background-size: 0% 2px;
-    border: 2px solid #61dafb;
-}
-
-
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.85rem;
+    opacity: 0;
+    transition: var(--transition);
+    white-space: nowrap;
+    color: var(--text);
+    background-color: var(--background-light);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  
+  .skill-icons svg:hover::after {
+    opacity: 1;
+    bottom: -35px;
+  }
+  
+  @media (max-width: 768px) {
+    .About-header {
+      padding: 3rem 1.5rem;
+    }
+  
+    .About,
+    .Professional {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+  
+    .Professional {
+      margin-top: 3rem;
+    }
+  
+    .about-me {
+      padding: 2rem;
+    }
+  
+    .about-me h1 {
+      font-size: 1.5rem;
+    }
+  
+    .about-me p {
+      font-size: 1rem;
+    }
+  
+    .skill-icons {
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      gap: 2rem;
+      padding: 1.5rem;
+    }
+  
+    .skill-icons svg {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .About-header {
+      padding: 2rem 1rem;
+    }
+  
+    .About,
+    .Professional {
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .Professional {
+      margin-top: 2.5rem;
+    }
+  
+    .about-me {
+      padding: 1.5rem;
+    }
+  
+    .about-me h1 {
+      font-size: 1.3rem;
+    }
+  
+    .about-me p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+  
+    .skill-icons {
+      grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+      gap: 1.5rem;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  
+    .skill-icons svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  
