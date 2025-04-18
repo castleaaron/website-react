@@ -91,23 +91,41 @@
     box-shadow: var(--shadow);
   }
   
+  .skill-icons .icon-wrapper {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: var(--transition);
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .skill-icons .icon-wrapper:hover {
+    border-color: var(--primary);
+    transform: perspective(500px) rotateX(var(--rotateX)) rotateY(var(--rotateY));
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
   .skill-icons svg {
     width: 60px;
     height: 60px;
     color: var(--text-secondary);
     transition: var(--transition);
     position: relative;
-    margin: 0 auto;
     display: block;
   }
   
-  .skill-icons svg:hover {
+  .skill-icons .icon-wrapper:hover svg {
     color: var(--primary);
-    transform: translateY(-8px);
   }
   
-  .skill-icons svg::after {
-    content: attr(data-text);
+  .skill-icons .icon-name {
     position: absolute;
     bottom: -30px;
     left: 50%;
@@ -123,42 +141,21 @@
     pointer-events: none;
   }
   
-  .skill-icons svg:hover::after {
+  .skill-icons .icon-wrapper:hover .icon-name {
     opacity: 1;
     bottom: -35px;
   }
   
   @media (max-width: 768px) {
-    .About-header {
-      padding: 3rem 1.5rem;
-    }
-  
-    .About,
-    .Professional {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-    }
-  
-    .Professional {
-      margin-top: 3rem;
-    }
-  
-    .about-me {
-      padding: 2rem;
-    }
-  
-    .about-me h1 {
-      font-size: 1.5rem;
-    }
-  
-    .about-me p {
-      font-size: 1rem;
-    }
-  
     .skill-icons {
       grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
       gap: 2rem;
       padding: 1.5rem;
+    }
+  
+    .skill-icons .icon-wrapper {
+      width: 70px;
+      height: 70px;
     }
   
     .skill-icons svg {
@@ -168,33 +165,6 @@
   }
   
   @media (max-width: 480px) {
-    .About-header {
-      padding: 2rem 1rem;
-    }
-  
-    .About,
-    .Professional {
-      font-size: 1.75rem;
-      margin-bottom: 1.5rem;
-    }
-  
-    .Professional {
-      margin-top: 2.5rem;
-    }
-  
-    .about-me {
-      padding: 1.5rem;
-    }
-  
-    .about-me h1 {
-      font-size: 1.3rem;
-    }
-  
-    .about-me p {
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-  
     .skill-icons {
       grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
       gap: 1.5rem;
@@ -202,10 +172,13 @@
       margin-top: 2rem;
     }
   
+    .skill-icons .icon-wrapper {
+      width: 60px;
+      height: 60px;
+    }
+  
     .skill-icons svg {
       width: 40px;
       height: 40px;
     }
   }
-  
-  

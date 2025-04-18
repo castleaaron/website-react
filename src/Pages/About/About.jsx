@@ -14,14 +14,59 @@ import {
 } from "react-icons/di"
 import { SiUnrealengine, SiCsharp, SiTypescript, SiBlender, SiWebgl } from "react-icons/si"
 import { SiDotnet } from "react-icons/si"
+import { useRef, useEffect } from "react"
 import "./About.css"
+
+const SkillIcon = ({ icon: Icon, name }) => {
+  const wrapperRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    if (!wrapperRef.current) return;
+    
+    const wrapper = wrapperRef.current;
+    const rect = wrapper.getBoundingClientRect();
+    
+    // Calculate mouse position relative to the center of the element
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    
+    // Calculate the rotation based on mouse position
+    // Limit rotation to a reasonable range (e.g., -10° to 10°)
+    const rotateY = ((e.clientX - centerX) / (rect.width / 2)) * 10;
+    const rotateX = -((e.clientY - centerY) / (rect.height / 2)) * 10;
+    
+    wrapper.style.setProperty('--rotateX', `${rotateX}deg`);
+    wrapper.style.setProperty('--rotateY', `${rotateY}deg`);
+  };
+
+  const handleMouseLeave = () => {
+    if (!wrapperRef.current) return;
+    const wrapper = wrapperRef.current;
+    
+    // Reset rotation when mouse leaves
+    wrapper.style.setProperty('--rotateX', '0deg');
+    wrapper.style.setProperty('--rotateY', '0deg');
+  };
+
+  return (
+    <div 
+      className="icon-wrapper" 
+      ref={wrapperRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
+      <Icon />
+      <span className="icon-name">{name}</span>
+    </div>
+  );
+};
 
 const About = () => {
   return (
     <div className="App-header">
       <div className="About-header">
         <h1 className="About">About Me</h1>
-
+        
         <div className="about-me">
           <h1>👋 Hi, I'm Aaron Castle!</h1>
           <p>
@@ -49,39 +94,30 @@ const About = () => {
             fraternity and university clubs.
           </p>
         </div>
-
+        
         <h1 className="Professional">Professional Skillset</h1>
         <div className="skill-icons">
-          <DiJavascript1 data-text="JavaScript" />
-          <DiReact data-text="React" />
-          <DiNodejs data-text="Node.js" />
-          <DiPython data-text="Python" />
-          <DiJava data-text="Java" />
-          <CgCPlusPlus data-text="C++" />
-          <DiGit data-text="Git" />
-          <DiMongodb data-text="MongoDB" />
-          <SiDotnet data-text=".NET" />
-          <DiLinux data-text="Linux" />
-          <DiCss3 data-text="CSS" />
-          <DiVisualstudio data-text="Visual Studio" />
-          {/* <DiC data-text="C" /> */}
-          <DiUnitySmall data-text="Unity" />
-          {/* <SiCsharp data-text="C#" /> */}
-          <SiUnrealengine data-text="Unreal Engine" />
-          <SiTypescript data-text="TypeScript" />
-          <SiBlender data-text="Blender" />
-          <SiWebgl data-text="WebGL" />
+          <SkillIcon icon={DiJavascript1} name="JavaScript" />
+          <SkillIcon icon={DiReact} name="React" />
+          <SkillIcon icon={DiNodejs} name="Node.js" />
+          <SkillIcon icon={DiPython} name="Python" />
+          <SkillIcon icon={DiJava} name="Java" />
+          <SkillIcon icon={CgCPlusPlus} name="C++" />
+          <SkillIcon icon={DiGit} name="Git" />
+          <SkillIcon icon={DiMongodb} name="MongoDB" />
+          <SkillIcon icon={SiDotnet} name=".NET" />
+          <SkillIcon icon={DiLinux} name="Linux" />
+          <SkillIcon icon={DiCss3} name="CSS" />
+          <SkillIcon icon={DiVisualstudio} name="Visual Studio" />
+          <SkillIcon icon={DiUnitySmall} name="Unity" />
+          <SkillIcon icon={SiUnrealengine} name="Unreal Engine" />
+          <SkillIcon icon={SiTypescript} name="TypeScript" />
+          <SkillIcon icon={SiBlender} name="Blender" />
+          <SkillIcon icon={SiWebgl} name="WebGL" />
         </div>
-
-        {/* Uncomment when you have the GitHub calendar component ready */}
-        {/* <h1 className="Professional">GitHub Contributions</h1>
-        <div className="github-calendar-container">
-          <GitHubCalendarComponent username="castleaaron" />
-        </div> */}
       </div>
     </div>
   )
 }
 
 export default About
-
