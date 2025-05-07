@@ -78,6 +78,10 @@
     color: var(--text);
     font-weight: 600;
   }
+
+  .about-me-header {
+    text-align: left;
+  }
   
   .skill-icons {
     display: grid;

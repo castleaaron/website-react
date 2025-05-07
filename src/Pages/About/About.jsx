@@ -67,33 +67,40 @@ const About = () => {
       <div className="About-header">
         <h1 className="About">About Me</h1>
         
-        <div className="about-me">
+        {/* <div className="about-me">
           <h1>👋 Hi, I'm Aaron Castle!</h1>
+        </div> */}
+        <h1 className="about-me-header">🎓 Education: </h1>
+        <div className="about-me">
           <p>
-            <strong>Education:</strong> I'm currently pursuing a <strong>Master of Science in Computer Science</strong>{" "}
+            I'm currently pursuing a <strong>Master of Science in Computer Science</strong>{" "}
             at the University of Minnesota. I also completed my Bachelor's degree in Computer Science here, graduating
             with a stellar <strong>3.90 GPA</strong>!
           </p>
-          <p>
-            <strong>Experience:</strong> I've honed my skills as a <strong>Software Engineer Intern</strong> at Allianz
-            Technology and as a <strong>Production Engineer Intern</strong> at Sentera. I also enjoy helping others as
-            an <strong>Undergraduate Teaching Assistant</strong>.
-          </p>
-          <p>
-            <strong>Skills:</strong> I'm skilled in Java, Python, C/C++, and JavaScript. I build responsive websites
-            with React and Node.js, analyze data with Python, and create innovative solutions with OpenCV and other
-            libraries.
-          </p>
-          <p>
-            <strong>Projects:</strong> From developing a <strong>Gene Network Analysis Tool</strong> to creating a{" "}
-            <strong>Personal Portfolio Website</strong>, I love tackling challenging problems and bringing ideas to
-            life!
-          </p>
-          <p>
-            <strong>Hobbies:</strong> When I'm not coding, you can find me cycling, fencing, or engaging with my
-            fraternity and university clubs.
-          </p>
         </div>
+        <h1 className="about-me-header">⚙️ Experience:</h1>
+        <div className="about-me">
+            <p>
+              I've honed my skills as a <strong>Software Engineer Intern</strong> at Allianz
+              Technology and as a <strong>Production Engineer Intern</strong> at Sentera. I also enjoy helping others as
+              an <strong>Undergraduate Teaching Assistant</strong>.
+            </p>
+          </div>
+          <h1 className="about-me-header">👨‍💻 Skills:</h1>
+          <div className="about-me">
+            <p>
+              I'm skilled in Java, Python, C/C++, and JavaScript. I build responsive websites
+              with React and Node.js, analyze data with Python, and create innovative solutions with OpenCV and other
+              libraries.
+            </p>
+          </div>
+          <h1 className="about-me-header">🏃‍➡️ Hobbies: </h1>
+          <div className="about-me">
+            <p>
+              <strong>Hobbies:</strong> When I'm not coding, you can find me cycling, fencing, or engaging with my
+              fraternity and university clubs.
+            </p>
+          </div>
         
         <h1 className="Professional">Professional Skillset</h1>
         <div className="skill-icons">
