@@ -110,6 +110,7 @@ const Projects = () => {
       }
     }
   ]
+  
 
   return (
     <div className="projects-page">
