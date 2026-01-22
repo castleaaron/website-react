@@ -80,7 +80,7 @@ const Projects = () => {
     },
     {
       title: "Motion Based Drone Teleoperation",
-      video: "https://youtu.be/1wptljby9TE",
+      video: "https://www.youtube.com/embed/1wptljby9TE?si=B28U3KLjDlpfJgZ-",
       description: "A VR-based drone teleoperation system that lets users control and pilot a real or simulated drone in immersive virtual reality using intuitive head and motion tracking for precise, real-time navigation.",
       tags: ["Python", "ROS", "OpenXR", "Linux"],
       links: {
