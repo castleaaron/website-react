@@ -33,7 +33,7 @@ const Resume = () => {
       </div>
 
       <div className="resume-footer">
-        <p>Last updated: July 2025</p>
+        <p>Last updated: January 2026</p>
         <p>
           Feel free to <a href="mailto:castleaaron@icloud.com">contact me</a> for more information
         </p>

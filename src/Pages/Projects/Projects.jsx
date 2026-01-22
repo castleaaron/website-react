@@ -4,6 +4,9 @@ import colordetection from "../../images/color-detection.webp"
 import fft from "../../images/fft.png"
 import blender from "../../images/blender.png"
 import website from "../../images/website.png"
+import nlp from "../../images/nlp.png"
+import cvimg from "../../images/cv2img.png"
+
 import "./Projects.css"
 import { ExternalLink, Github } from "lucide-react"
 
@@ -65,7 +68,7 @@ const Projects = () => {
       },
     },
     {
-      title: "Blender FIles",
+      title: "Blender Files",
       image: blender,
       description:
         "A collection of Blender files showcasing various 3D models and animations created using Blender, a powerful open-source 3D creation suite. These files demonstrate my skills in 3D modeling, texturing, and animation.",
@@ -73,6 +76,37 @@ const Projects = () => {
       links: {
         github: "https://github.com/castleaaron/BlenderFiles",
         demo: "#",
+      }
+    },
+    {
+      title: "Motion Based Drone Teleoperation",
+      video: "https://youtu.be/1wptljby9TE",
+      description: "A VR-based drone teleoperation system that lets users control and pilot a real or simulated drone in immersive virtual reality using intuitive head and motion tracking for precise, real-time navigation.",
+      tags: ["Python", "ROS", "OpenXR", "Linux"],
+      links: {
+        github: "https://github.com/castleaaron/CSCI-5551-ROS2-Final",
+        demo: "https://youtu.be/1wptljby9TE",
+      }
+    },
+    {
+      // https://colab.research.google.com/drive/1zFRwk3C9gXfkVzUlFovPSsA1Mhvc4_o0?usp=sharing
+      title: "Evidence Grounded Fake Job Detection",
+      image: nlp,
+      description: "Using the LUKE evidence based language model, we implemented a chrome extension to detect fake jobs with probabilities.",
+      tags: ["Hugging Face", "Python", "Machine Learning", "LLM"],
+      links: {
+        github: "https://colab.research.google.com/drive/1zFRwk3C9gXfkVzUlFovPSsA1Mhvc4_o0?usp=sharing",
+        demo: "https://docs.google.com/presentation/d/11l9Yqh-yGugkfSHv2mDc1D3rH49xg4ml/edit?usp=sharing&ouid=100028182739456225219&rtpof=true&sd=true"
+      }
+    },
+    {
+      title: "Age, Gender, and Emotion Detection",
+      image: cvimg,
+      description: "We trained a CNN using the RESNET model and compared results to YOLOv8 for age, gender, and emotion detection.",
+      tags: ["OpenCV", "Python", "YOLOv8"],
+      links: {
+        github: "https://github.com/GlitchnMoe/cv5561-f25-team-MAH",
+        demo: "https://docs.google.com/presentation/d/1gf8PbGkvRNUvx16dfi-Mr7slLVBPDe2j/edit?usp=sharing&ouid=100028182739456225219&rtpof=true&sd=true"
       }
     }
   ]

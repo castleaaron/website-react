@@ -89,15 +89,15 @@ const About = () => {
           <h1 className="about-me-header">👨‍💻 Skills:</h1>
           <div className="about-me">
             <p>
-              I'm skilled in Java, Python, C/C++/C#, and JavaScript. I build responsive websites
-              with React and Node.js, analyze data with Python, and create innovative solutions with OpenCV and other
+              I'm skilled in <strong>Java</strong>, <strong>Python</strong>, <strong>C/C++/C#</strong>, and <strong>JavaScript</strong>. I build responsive websites
+              with React and Node.js, analyze data with Python, and create innovative solutions with <strong>OpenCV</strong> and other
               libraries.
             </p>
           </div>
           <h1 className="about-me-header">🏃‍➡️ Hobbies: </h1>
           <div className="about-me">
             <p>
-              <strong>Hobbies:</strong> When I'm not coding, you can find me cycling, fencing, or engaging with my
+              When I'm not coding, you can find me cycling, fencing, or engaging with my
                university clubs.
             </p>
           </div>
